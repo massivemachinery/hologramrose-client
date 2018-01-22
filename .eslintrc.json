@@ -1,22 +1,22 @@
 {
   "parser": "babel-eslint",
   "extends": [
-    "eslint:recommended",
-    "plugin:flowtype/recommended",
     "plugin:react/recommended",
-    "react-app"
+    "react-app",
+    "eslint:recommended",
+    "plugin:flowtype/recommended"
   ],
   "parserOptions": {
-    "ecmaVersion": 8,
-    "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
-    }
+    },
+    "ecmaVersion": 8,
+    "sourceType": "module"
   },
   "plugins": [
+    "react",
     "import",
-    "flowtype",
-    "react"
+    "flowtype"
   ],
   "env": {
     "browser": true,
@@ -85,15 +85,15 @@
     "no-shadow": "error",
     "no-use-before-define": "error",
     "new-cap": "error",
+    "jsx-quotes": "error",
+    "react/jsx-curly-spacing": "error",
+    "react/jsx-equals-spacing": "error",
+    "react/jsx-tag-spacing": "error",
     "import/no-unresolved": "error",
     "import/first": "error",
     "import/no-duplicates": "error",
     "import/extensions": "error",
     "import/order": ["error", {"newlines-between": "never"}],
-    "import/newline-after-import": "error",
-    "jsx-quotes": "error",
-    "react/jsx-curly-spacing": "error",
-    "react/jsx-equals-spacing": "error",
-    "react/jsx-tag-spacing": "error"
+    "import/newline-after-import": "error"
   }
 }
