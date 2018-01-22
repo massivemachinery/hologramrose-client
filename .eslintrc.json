@@ -1,0 +1,93 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "eslint:recommended",
+    "plugin:flowtype/recommended",
+    "plugin:react/recommended",
+    "react-app"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": [
+    "import",
+    "flowtype",
+    "react"
+  ],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "overrides": [{
+    "files": ["**/*.test.js", "**/*.spec.js"],
+    "env": {
+      "jest": true
+    }
+  }],
+  "rules": {
+    "no-console": "off",
+    "object-shorthand": "off",
+    "max-len": ["warn", 100, {"ignoreUrls": true, "ignoreRegExpLiterals": true}],
+    "semi": "error",
+    "quotes": ["error", "single"],
+    "indent": ["error", 2, {"SwitchCase": 1}],
+    "comma-spacing": "error",
+    "space-infix-ops": "error",
+    "key-spacing": "error",
+    "space-unary-ops": "error",
+    "prefer-arrow-callback": "error",
+    "comma-dangle": ["error", {
+      "arrays": "always-multiline",
+      "objects": "always-multiline",
+      "imports": "always-multiline",
+      "exports": "always-multiline",
+      "functions": "always-multiline"
+    }],
+    "array-bracket-spacing": "error",
+    "object-curly-spacing": "error",
+    "prefer-const": ["error", {"destructuring": "all"}],
+    "quote-props": ["error", "as-needed"],
+    "no-useless-concat": "error",
+    "eol-last": "error",
+    "no-multiple-empty-lines": ["error", {"max": 2, "maxBOF": 0, "maxEOF": 0}],
+    "no-case-declarations": "error",
+    "no-fallthrough": "error",
+    "no-unused-vars": ["error", {"args": "none"}],
+    "arrow-parens": ["error", "as-needed"],
+    "eqeqeq": "error",
+    "no-var": "error",
+    "space-before-blocks": "error",
+    "keyword-spacing": "error",
+    "arrow-spacing": "error",
+    "spaced-comment": ["error", "always", {"block": {"balanced": true}}],
+    "camelcase": "error",
+    "no-trailing-spaces": ["error", {"ignoreComments": false}],
+    "no-restricted-syntax": ["error", "ForInStatement"],
+    "one-var": ["error", "never"],
+    "brace-style": "error",
+    "curly": "error",
+    "no-else-return": "error",
+    "space-in-parens": "error",
+    "space-before-function-paren": ["error", {
+      "anonymous": "never",
+      "named": "never",
+      "asyncArrow": "always"
+    }],
+    "array-callback-return": "error",
+    "no-multi-spaces": "error",
+    "no-shadow-restricted-names": "error",
+    "no-shadow": "error",
+    "no-use-before-define": "error",
+    "new-cap": "error",
+    "import/no-unresolved": "error",
+    "import/first": "error",
+    "import/no-duplicates": "error",
+    "import/extensions": "error",
+    "import/order": ["error", {"newlines-between": "never"}],
+    "import/newline-after-import": "error"
+  }
+}

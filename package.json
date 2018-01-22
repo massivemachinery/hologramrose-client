@@ -1,6 +1,13 @@
 {
   "name": "hologramrose-client",
   "private": true,
+  "scripts": {
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
+    "test": "node scripts/test.js --env=jsdom",
+    "prettier": "prettier --list-different \"src/**/*.{js,graphql}\"",
+    "prettier:fix": "prettier --write \"src/**/*.{js,graphql}\""
+  },
   "dependencies": {
     "apollo-cache-inmemory": "1.1.5",
     "apollo-client": "2.2.0",
@@ -54,13 +61,6 @@
     "webpack-manifest-plugin": "1.3.2",
     "whatwg-fetch": "2.0.3"
   },
-  "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom",
-    "prettier": "prettier --list-different \"src/**/*.{js,graphql}\"",
-    "prettier:fix": "prettier --write \"src/**/*.{js,graphql}\""
-  },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,mjs}"
@@ -94,13 +94,5 @@
       "jsx",
       "node"
     ]
-  },
-  "babel": {
-    "presets": [
-      "react-app"
-    ]
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   }
 }
