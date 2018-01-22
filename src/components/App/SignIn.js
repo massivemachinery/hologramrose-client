@@ -6,11 +6,10 @@ export default class SignIn extends React.Component {
   static propTypes = {
     url: PropTypes.string.isRequired,
     onSignInCompleted: PropTypes.func.isRequired,
-  }
+  };
 
   // https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
-  receiveMessage = (event) => {
-
+  receiveMessage = event => {
     // Only trust messages from this origin
     if (event.origin !== window.location.origin) {
       return;
@@ -21,7 +20,7 @@ export default class SignIn extends React.Component {
       event.source.close();
       this.props.onSignInCompleted();
     }
-  }
+  };
 
   componentDidMount() {
     window.addEventListener('message', this.receiveMessage, false);
@@ -38,19 +37,23 @@ export default class SignIn extends React.Component {
     const height = 500;
     const left = (window.outerWidth - width) / 2;
     const top = (window.outerHeight - height) / 2;
-    window.open(url, windowName, [
-      `width=${width}`,
-      `height=${height}`,
-      `left=${left}`,
-      `top=${top}`,
-      // 'toolbar=0',
-      // 'scrollbars=0',
-      // 'status=0',
-      // 'resizable=0',
-      // 'location=0',
-      // 'menuBar=0',
-    ].join(','));
-  }
+    window.open(
+      url,
+      windowName,
+      [
+        `width=${width}`,
+        `height=${height}`,
+        `left=${left}`,
+        `top=${top}`,
+        // 'toolbar=0',
+        // 'scrollbars=0',
+        // 'status=0',
+        // 'resizable=0',
+        // 'location=0',
+        // 'menuBar=0',
+      ].join(','),
+    );
+  };
 
   render() {
     return (

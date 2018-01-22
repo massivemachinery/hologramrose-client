@@ -12,7 +12,9 @@ const store = createStore(
   rootReducer,
   // Enable Redux DevTools Extension
   // https://github.com/zalmoxisus/redux-devtools-extension#1-with-redux
-  window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f,
+  window.__REDUX_DEVTOOLS_EXTENSION__
+    ? window.__REDUX_DEVTOOLS_EXTENSION__()
+    : f => f,
 );
 
 export default store;

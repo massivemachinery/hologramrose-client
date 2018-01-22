@@ -11,17 +11,15 @@ export class GraphQLTest extends React.Component {
       id: PropTypes.string.isRequired,
       email: PropTypes.string.isRequired,
     }),
-  }
+  };
 
   static defaultProps = {
     currentUser: null,
-  }
+  };
 
   render() {
     if (this.props.isLoadingCurrentUser) {
-      return (
-        <div>Loading...</div>
-      );
+      return <div>Loading...</div>;
     }
 
     return (

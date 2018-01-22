@@ -2,7 +2,7 @@
 const ADD = 'conservator/some-stuff.js/ADD';
 
 // Action creators
-export const add = (text) => {
+export const add = text => {
   return {type: ADD, text};
 };
 
@@ -13,7 +13,6 @@ const initialState = {
 // Reducer
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-
     case ADD: {
       return {
         ...state,

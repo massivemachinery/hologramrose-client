@@ -2,7 +2,7 @@ import {graphql} from 'react-apollo';
 import CurrentUserQuery from '../graphql/queries/CurrentUser';
 
 export default graphql(CurrentUserQuery, {
-  options: (ownProps) => {
+  options: ownProps => {
     return {
       pollInterval: 10000,
       fetchPolicy: 'cache-and-network',

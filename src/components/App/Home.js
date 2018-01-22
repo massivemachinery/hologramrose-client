@@ -28,16 +28,16 @@ export class Home extends React.Component {
     classes: PropTypes.object.isRequired,
     email: PropTypes.string,
     refetchCurrentUser: PropTypes.func.isRequired,
-  }
+  };
 
   static defaultProps = {
     email: null,
-  }
+  };
 
   // The current user is null before sign in, so we need to refetch when sign in has completed
   handleSignInCompleted = () => {
     this.props.refetchCurrentUser();
-  }
+  };
 
   render() {
     return (
@@ -47,14 +47,17 @@ export class Home extends React.Component {
             Hologram Rose
           </Typography>
           <br />
-          {! this.props.email &&
-            <SignIn url="/auth/github" onSignInCompleted={this.handleSignInCompleted} />
-          }
-          {!! this.props.email &&
+          {!this.props.email && (
+            <SignIn
+              url="/auth/github"
+              onSignInCompleted={this.handleSignInCompleted}
+            />
+          )}
+          {!!this.props.email && (
             <Typography align="center">
               Signed in as {this.props.email}
             </Typography>
-          }
+          )}
         </div>
       </div>
     );
@@ -64,7 +67,7 @@ export class Home extends React.Component {
 export default compose(
   withStyles(styles),
   withCurrentUser,
-  withProps((ownProps) => {
+  withProps(ownProps => {
     return {
       email: ownProps.currentUser && ownProps.currentUser.email,
     };

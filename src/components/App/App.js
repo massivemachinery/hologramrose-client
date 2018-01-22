@@ -10,7 +10,6 @@ import Home from './Home';
 import Test from './Test';
 
 export default class App extends React.Component {
-
   theme = createMuiTheme(theme);
 
   // Apollo provider

@@ -12,7 +12,10 @@ export function generateIcon(size: number, color: string) {
 }
 
 // Generates a favicon and updates the DOM
-export default function setFavicon(color: string = '#ff0000', size: number = 64) {
+export default function setFavicon(
+  color: string = '#ff0000',
+  size: number = 64,
+) {
   const link = document.createElement('link');
   // link.type = 'image/x-icon';
   link.rel = 'shortcut icon';
