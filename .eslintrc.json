@@ -2,7 +2,6 @@
   "parser": "babel-eslint",
   "extends": [
     "plugin:react/recommended",
-    "react-app",
     "eslint:recommended",
     "plugin:flowtype/recommended"
   ],
