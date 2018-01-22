@@ -6,7 +6,7 @@ import {InMemoryCache} from 'apollo-cache-inmemory';
 // https://www.apollographql.com/docs/react/basics/setup.html#creating-client
 export const client = new ApolloClient({
   link: new HttpLink({
-    uri: '/graphql',
+    uri: 'http://localhost:4000/graphql',
     credentials: 'same-origin',
   }),
   cache: new InMemoryCache(),
