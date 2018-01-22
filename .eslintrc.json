@@ -33,7 +33,9 @@
     "object-shorthand": "off",
     "max-len": ["warn", 100, {"ignoreUrls": true, "ignoreRegExpLiterals": true}],
     "semi": "error",
-    "quotes": ["error", "single"],
+    "semi-spacing": "error",
+    "semi-style": "error",
+    "quotes": ["error", "single", {"avoidEscape": true}],
     "indent": ["error", 2, {"SwitchCase": 1}],
     "comma-spacing": "error",
     "space-infix-ops": "error",
@@ -88,6 +90,10 @@
     "import/no-duplicates": "error",
     "import/extensions": "error",
     "import/order": ["error", {"newlines-between": "never"}],
-    "import/newline-after-import": "error"
+    "import/newline-after-import": "error",
+    "jsx-quotes": "error",
+    "react/jsx-curly-spacing": "error",
+    "react/jsx-equals-spacing": "error",
+    "react/jsx-tag-spacing": "error"
   }
 }
