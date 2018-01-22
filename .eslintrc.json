@@ -28,7 +28,7 @@
     }
   }],
   "rules": {
-    "no-console": "off",
+    "no-console": "warn",
     "object-shorthand": "off",
     "max-len": ["warn", 100, {"ignoreUrls": true, "ignoreRegExpLiterals": true}],
     "semi": "error",
