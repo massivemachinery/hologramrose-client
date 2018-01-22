@@ -12,7 +12,7 @@ export default class SignIn extends React.Component {
   receiveMessage = (event) => {
 
     // Only trust messages from this origin
-    if (event.origin !== location.origin) {
+    if (event.origin !== window.location.origin) {
       return;
     }
 
