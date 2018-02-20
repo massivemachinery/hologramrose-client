@@ -9,10 +9,16 @@ export default graphql(CurrentUserQuery, {
     };
   },
   props: ({data, ownProps}) => {
+    if (data.error) {
+      if (data.error.message === 'GraphQL error: Not authorized') {
+        console.log('Not logged in');
+      }
+    }
+
     return {
       isLoadingCurrentUser: data.loading,
       refetchCurrentUser: data.refetch,
-      currentUser: data.currentUser,
+      currentUser: data.viewer,
     };
   },
 });

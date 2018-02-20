@@ -27,6 +27,9 @@
       "jest": true
     }
   }],
+  "globals": {
+    "process": true
+  },
   "rules": {
     "no-console": "warn",
     "object-shorthand": "off",

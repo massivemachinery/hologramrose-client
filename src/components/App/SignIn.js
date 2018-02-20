@@ -11,12 +11,13 @@ export default class SignIn extends React.Component {
   // https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
   receiveMessage = event => {
     // Only trust messages from this origin
-    if (event.origin !== window.location.origin) {
+    if (event.origin !== process.env.REACT_APP_SERVER) {
       return;
     }
 
     // Close the pop up
-    if (event.data === 'sign-in-completed') {
+    if (event.data.signInToken) {
+      localStorage.setItem('hologramrose:signInToken', event.data.signInToken);
       event.source.close();
       this.props.onSignInCompleted();
     }
@@ -34,7 +35,7 @@ export default class SignIn extends React.Component {
     const url = this.props.url;
     const windowName = 'signIn';
     const width = 720;
-    const height = 500;
+    const height = 640;
     const left = (window.outerWidth - width) / 2;
     const top = (window.outerHeight - height) / 2;
     window.open(

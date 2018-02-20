@@ -49,7 +49,7 @@ export class Home extends React.Component {
           <br />
           {!this.props.email && (
             <SignIn
-              url="/auth/github"
+              url="http://localhost:4000/auth/github"
               onSignInCompleted={this.handleSignInCompleted}
             />
           )}
