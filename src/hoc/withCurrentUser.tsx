@@ -9,8 +9,12 @@ export default graphql(CurrentUserQuery, {
     };
   },
   props: ({data, ownProps}) => {
+    if (!data) {
+      return;
+    }
     if (data.error) {
       if (data.error.message === 'GraphQL error: Not authorized') {
+        // tslint:disable-next-line
         console.log('Not logged in');
       }
     }
@@ -18,7 +22,7 @@ export default graphql(CurrentUserQuery, {
     return {
       isLoadingCurrentUser: data.loading,
       refetchCurrentUser: data.refetch,
-      currentUser: data.viewer,
+      // currentUser: data.viewer,
     };
   },
 });

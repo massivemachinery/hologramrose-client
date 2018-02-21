@@ -1,11 +1,12 @@
-// @flow
-
 // Generates a mono colored icon
 export function generateIcon(size: number, color: string) {
   const canvas = document.createElement('canvas');
   canvas.height = size;
   canvas.width = size;
   const context = canvas.getContext('2d');
+  if (!context) {
+    throw new Error('failed to get context');
+  }
   context.fillStyle = color;
   context.fillRect(0, 0, size, size);
   return canvas.toDataURL();

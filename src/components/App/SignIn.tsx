@@ -1,15 +1,18 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import * as PropTypes from 'prop-types';
 import Button from 'material-ui/Button';
 
-export default class SignIn extends React.Component {
+export default class SignIn extends React.Component<{
+  url: string;
+  onSignInCompleted: Function;
+}> {
   static propTypes = {
     url: PropTypes.string.isRequired,
     onSignInCompleted: PropTypes.func.isRequired,
   };
 
   // https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
-  receiveMessage = event => {
+  receiveMessage = (event: any) => {
     // Only trust messages from this origin
     if (event.origin !== process.env.REACT_APP_SERVER) {
       return;
@@ -58,7 +61,7 @@ export default class SignIn extends React.Component {
 
   render() {
     return (
-      <Button raised onClick={this.handleSignIn} color="primary">
+      <Button raised={true} onClick={this.handleSignIn} color="primary">
         Sign in
       </Button>
     );
