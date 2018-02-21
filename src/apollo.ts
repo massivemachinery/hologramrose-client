@@ -21,7 +21,7 @@ const authLink = setContext((request, previousContext) => {
 // Apollo GraphQL client
 // https://www.apollographql.com/docs/react/basics/setup.html#creating-client
 export const client = new ApolloClient({
-  link: httpLink,
+  link: authLink.concat(httpLink),
   // link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
