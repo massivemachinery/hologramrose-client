@@ -22,7 +22,6 @@ const authLink = setContext((request, previousContext) => {
 // https://www.apollographql.com/docs/react/basics/setup.html#creating-client
 export const client = new ApolloClient({
   link: authLink.concat(httpLink),
-  // link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
 

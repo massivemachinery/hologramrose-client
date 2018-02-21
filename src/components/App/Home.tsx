@@ -1,7 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import {compose} from 'react-apollo';
-import {withProps} from 'recompose';
+import {compose, withProps} from 'recompose';
 import {withStyles} from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
 import withCurrentUser from '../../hoc/withCurrentUser';

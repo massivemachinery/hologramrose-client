@@ -15,7 +15,7 @@
     "apollo-cache-inmemory": "1.1.9",
     "apollo-client": "2.2.5",
     "apollo-link-context": "1.0.6",
-    "apollo-link-http": "1.4.0",
+    "apollo-link-http": "1.3.3",
     "graphql": "0.13.1",
     "graphql-tag": "2.8.0",
     "material-ui": "1.0.0-beta.30",
@@ -29,16 +29,20 @@
     "redux": "3.7.2"
   },
   "devDependencies": {
-    "@types/graphql": "0.12.4",
+    "@types/graphql": "^0.12.3",
     "@types/jest": "^22.1.3",
     "@types/node": "^9.4.6",
     "@types/prop-types": "15.5.2",
     "@types/react": "^16.0.38",
     "@types/react-dom": "^16.0.4",
-    "@types/react-redux": "5.0.15",
-    "@types/react-router-dom": "4.2.4",
-    "@types/recompose": "0.24.5",
-    "prettier": "1.10.2",
+    "@types/react-redux": "^5.0.15",
+    "@types/react-router-dom": "^4.2.4",
+    "@types/recompose": "^0.24.5",
+    "prettier": "^1.10.2",
     "typescript": "^2.7.2"
+  },
+  "resolutions": {
+    "apollo-link": "1.1.0",
+    "graphql": "0.12.3"
   }
 }
