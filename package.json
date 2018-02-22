@@ -42,6 +42,7 @@
     "typescript": "^2.7.2"
   },
   "resolutions": {
-    "apollo-link": "1.1.0"
+    "apollo-link": "1.1.0",
+    "graphql": "0.12.3"
   }
 }
