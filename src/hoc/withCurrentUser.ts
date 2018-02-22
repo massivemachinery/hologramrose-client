@@ -19,6 +19,9 @@ export default graphql(CurrentUserQuery, {
       }
     }
 
+    // tslint:disable-next-line
+    console.log(data);
+
     return {
       isLoadingCurrentUser: data.loading,
       refetchCurrentUser: data.refetch,
