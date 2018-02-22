@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import App from './components/App/App';
 // import registerServiceWorker from './registerServiceWorker';
 // import setFavicon from './utils/favicon';
@@ -10,5 +10,5 @@ import App from './components/App/App';
 // https://en.wikipedia.org/wiki/Rose_(color)
 // setFavicon('#ff007f', 64);
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root') as HTMLElement);
 // registerServiceWorker();

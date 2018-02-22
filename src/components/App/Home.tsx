@@ -1,29 +1,32 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import {compose} from 'react-apollo';
-import {withProps} from 'recompose';
+import * as React from 'react';
+import * as PropTypes from 'prop-types';
+import {compose, withProps} from 'recompose';
 import {withStyles} from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
 import withCurrentUser from '../../hoc/withCurrentUser';
 import SignIn from './SignIn';
 
-const styles = {
+const styles = () => ({
   root: {
-    position: 'fixed',
+    // position: 'fixed',
     top: 0,
     bottom: 0,
     left: 0,
     right: 0,
     display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+    'justify-content': 'center',
+    'align-items': 'center',
   },
   inner: {
     textAlign: 'center',
   },
-};
+});
 
-export class Home extends React.Component {
+export class Home extends React.Component<{
+  refetchCurrentUser: Function;
+  classes: any;
+  email?: string;
+}> {
   static propTypes = {
     classes: PropTypes.object.isRequired,
     email: PropTypes.string,
@@ -67,7 +70,7 @@ export class Home extends React.Component {
 export default compose(
   withStyles(styles),
   withCurrentUser,
-  withProps(ownProps => {
+  withProps((ownProps: any) => {
     return {
       email: ownProps.currentUser && ownProps.currentUser.email,
     };

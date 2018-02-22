@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "kumar-harsh.graphql-for-vscode",
+    "esbenp.prettier-vscode",
+    "eg2.tslint",
+    "mikestead.dotenv"
+  ]
+}

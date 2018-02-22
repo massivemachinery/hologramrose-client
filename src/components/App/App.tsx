@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import {ApolloProvider} from 'react-apollo';
 import {Provider} from 'react-redux';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
@@ -25,8 +25,8 @@ export default class App extends React.Component {
           <MuiThemeProvider theme={this.theme}>
             <Router>
               <Switch>
-                <Route exact path="/" component={Home} />
-                <Route exact path="/test" component={Test} />
+                <Route exact={true} path="/" component={Home} />
+                <Route exact={true} path="/test" component={Test} />
               </Switch>
             </Router>
           </MuiThemeProvider>
