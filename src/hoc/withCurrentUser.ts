@@ -1,7 +1,20 @@
 import {graphql} from 'react-apollo';
-import CurrentUserQuery from '../graphql/queries/CurrentUser';
+import Query from '../graphql/queries/CurrentUser';
 
-export default graphql(CurrentUserQuery, {
+type TProps = any;
+type TGraphQLVariables = any;
+type TChildProps = any;
+
+type User = {
+  id: string;
+  email: string;
+};
+
+type TData = {
+  viewer: User;
+};
+
+export default graphql<TProps, TData, TGraphQLVariables, TChildProps>(Query, {
   options: ownProps => {
     return {
       pollInterval: 10000,
@@ -18,14 +31,10 @@ export default graphql(CurrentUserQuery, {
         console.log('Not logged in');
       }
     }
-
-    // tslint:disable-next-line
-    console.log(data);
-
     return {
       isLoadingCurrentUser: data.loading,
       refetchCurrentUser: data.refetch,
-      // currentUser: data.viewer,
+      currentUser: data.viewer,
     };
   },
 });
