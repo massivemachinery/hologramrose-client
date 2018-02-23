@@ -8,7 +8,6 @@ import SignIn from './SignIn';
 
 const styles = () => ({
   root: {
-    // position: 'fixed',
     top: 0,
     bottom: 0,
     left: 0,
@@ -44,9 +43,9 @@ export class Home extends React.Component<{
 
   render() {
     return (
-      <div className={this.props.classes.root}>
+      <div className={this.props.classes.root} style={{position: 'absolute'}}>
         <div className={this.props.classes.inner}>
-          <Typography align="center" type="display1">
+          <Typography align="center" variant="display1">
             Hologram Rose
           </Typography>
           <br />

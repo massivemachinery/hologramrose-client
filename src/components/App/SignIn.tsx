@@ -61,7 +61,7 @@ export default class SignIn extends React.Component<{
 
   render() {
     return (
-      <Button raised={true} onClick={this.handleSignIn} color="primary">
+      <Button variant="raised" onClick={this.handleSignIn} color="primary">
         Sign in
       </Button>
     );
