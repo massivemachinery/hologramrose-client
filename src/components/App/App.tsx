@@ -8,6 +8,7 @@ import store from '../../redux';
 import theme from '../../config/theme';
 import Home from './Home';
 import Test from './Test';
+import Intercom from './Intercom';
 
 export default class App extends React.Component {
   theme = createMuiTheme(theme);
@@ -25,6 +26,7 @@ export default class App extends React.Component {
           <MuiThemeProvider theme={this.theme}>
             <Router>
               <Switch>
+                <Intercom />
                 <Route exact={true} path="/" component={Home} />
                 <Route exact={true} path="/test" component={Test} />
               </Switch>
