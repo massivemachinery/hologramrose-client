@@ -18,9 +18,11 @@ const Inner = styled.div`
 
 export class Home extends React.Component<{
   refetchCurrentUser: Function;
+  isLoading: boolean;
   email?: string;
 }> {
-  // The current user is null before sign in, so we need to refetch when sign in has completed
+  // The current user is null before sign in, so we need to refetch when sign in
+  // has completed
   handleSignInCompleted = () => {
     this.props.refetchCurrentUser();
   };
@@ -33,17 +35,19 @@ export class Home extends React.Component<{
             Hologram Rose
           </Typography>
           <br />
-          {!this.props.email && (
-            <SignIn
-              url={`${process.env.REACT_APP_SERVER}/auth/github`}
-              onSignInCompleted={this.handleSignInCompleted}
-            />
-          )}
-          {!!this.props.email && (
-            <Typography align="center">
-              Signed in as {this.props.email}
-            </Typography>
-          )}
+          {!this.props.email &&
+            !this.props.isLoading && (
+              <SignIn
+                url={`${process.env.REACT_APP_SERVER}/auth/github`}
+                onSignInCompleted={this.handleSignInCompleted}
+              />
+            )}
+          {!!this.props.email &&
+            !this.props.isLoading && (
+              <Typography align="center">
+                Signed in as {this.props.email}
+              </Typography>
+            )}
         </Inner>
       </Root>
     );
@@ -55,6 +59,7 @@ export default compose(
   withProps((ownProps: any) => {
     return {
       email: ownProps.currentUser && ownProps.currentUser.email,
+      isLoading: ownProps.isLoadingCurrentUser,
     };
   }),
 )(Home);
