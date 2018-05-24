@@ -14,7 +14,7 @@ export default class SignIn extends React.Component<{
   // https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
   receiveMessage = (event: any) => {
     // Only trust messages from this origin
-    if (event.origin !== process.env.REACT_APP_SERVER) {
+    if (event.origin !== window.env.API_SERVER) {
       return;
     }
 

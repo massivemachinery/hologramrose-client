@@ -38,7 +38,7 @@ export class Home extends React.Component<{
           {!this.props.email &&
             !this.props.isLoading && (
               <SignIn
-                url={`${process.env.REACT_APP_SERVER}/auth/github`}
+                url={`${window.env.API_SERVER}/auth/github`}
                 onSignInCompleted={this.handleSignInCompleted}
               />
             )}
