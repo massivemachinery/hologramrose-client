@@ -22,17 +22,19 @@ export default class App extends React.Component {
   render() {
     return (
       <ApolloProvider client={apolloClient}>
-        <Provider store={store}>
-          <MuiThemeProvider theme={this.theme}>
-            <Router>
-              <Switch>
-                <Intercom />
-                <Route exact={true} path="/" component={Home} />
-                <Route exact={true} path="/test" component={Test} />
-              </Switch>
-            </Router>
-          </MuiThemeProvider>
-        </Provider>
+        <>
+          <Intercom />
+          <Provider store={store}>
+            <MuiThemeProvider theme={this.theme}>
+              <Router>
+                <Switch>
+                  <Route exact={true} path="/" component={Home} />
+                  <Route exact={true} path="/test" component={Test} />
+                </Switch>
+              </Router>
+            </MuiThemeProvider>
+          </Provider>
+        </>
       </ApolloProvider>
     );
   }

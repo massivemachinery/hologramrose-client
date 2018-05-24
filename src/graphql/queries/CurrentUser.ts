@@ -5,6 +5,7 @@ export default gql`
     viewer {
       id
       email
+      intercomUserHash
     }
   }
 `;

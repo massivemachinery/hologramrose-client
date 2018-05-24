@@ -18,7 +18,14 @@ export class Intercom extends React.Component<{
       return null;
     }
 
-    return <IntercomTracker appID="dtk4r15f" {...this.props.intercomUser} />;
+    console.log('Ping Intercom ->', this.props.intercomUser);
+
+    return (
+      <IntercomTracker
+        appID={window.env.INTERCOM_APP_ID}
+        {...this.props.intercomUser}
+      />
+    );
   }
 }
 
@@ -26,18 +33,21 @@ export default compose(
   withCurrentUser,
 
   withProps((ownProps: any) => {
-    if (ownProps.isLoadingCurrentUser) {
+    const {currentUser} = ownProps;
+
+    if (!currentUser) {
       return;
     }
 
     return {
       intercomUser: {
-        email: ownProps.currentUser.email,
+        user_id: currentUser.id,
+        user_hash: currentUser.intercomUserHash,
+        email: currentUser.email,
         // TODO:
         name: 'some name',
         // TODO:
         created_at: new Date('2018-01-01'),
-        user_id: ownProps.currentUser.id,
       },
     };
   }),
