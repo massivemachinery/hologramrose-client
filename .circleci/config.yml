@@ -26,6 +26,7 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
+      - run: yarn --version
       - run: yarn install
 
       - save_cache:
@@ -38,3 +39,10 @@ jobs:
 
       # build
       - run: yarn build
+
+  deploy:
+    steps:
+      - run:
+          name: Deploy to S3 if tests pass and branch is Master
+          command: aws s3 ls s3://staging.hologramrose.io
+
