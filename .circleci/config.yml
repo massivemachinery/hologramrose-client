@@ -41,6 +41,9 @@ jobs:
       - run: yarn build
 
   deploy:
+    docker:
+      - image: lirbank/circleci-awscli
+
     steps:
       - run:
           name: Deploy to S3 if tests pass and branch is Master
