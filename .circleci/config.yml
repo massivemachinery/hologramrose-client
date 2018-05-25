@@ -49,3 +49,14 @@ jobs:
           name: Deploy to S3 if tests pass and branch is Master
           command: aws s3 ls s3://staging.hologramrose.io
 
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
