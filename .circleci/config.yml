@@ -42,6 +42,9 @@ jobs:
 
       # TMP
       - run: ls -la
+      - run: ls -la /
+      - run: ls -la /tmp/
+      # - run: cp -R ./build /tmp/
 
   deploy:
     docker:
@@ -51,6 +54,8 @@ jobs:
 
     steps:
       - run: ls -la
+      - run: ls -la /
+      - run: ls -la /tmp/
       - run:
           name: Deploy to S3 if tests pass and branch is Master
           command: aws s3 ls s3://staging.hologramrose.io
