@@ -49,30 +49,11 @@ jobs:
           root: build
           paths:
             - ./*
-            # - echo-output
-
-      # - persist_to_workspace:
-      #     root: /tmp/workspace
-      #     paths:
-      #       # - target/application.jar
-      #       # - build/*
-      #       - ~/repo/build/*
-
-      # - persist_to_workspace:
-      #   - root: /tmp/build
-      #   - paths:
-      #     - ~/repo/build/*
 
       # TMP
       - run: pwd
       - run: ls -la
-      - run: ls -la workspace/
       - run: ls -la build/
-      - run: ls -la ../
-      - run: ls -la /
-      - run: ls -la /tmp/
-      # - run: cp -R ./build /tmp/
-      # - run: ls -la /tmp/
 
   deploy:
     docker:
@@ -86,17 +67,10 @@ jobs:
 
       - run: pwd
       - run: ls -la
-      # - run: ls -la workspace/
       - run: ls -la build/
-      - run: ls -la ../
-      - run: ls -la /
-      - run: ls -la /tmp/
-      - run:
-          name: Deploy to S3 if tests pass and branch is Master
-          command: aws s3 ls s3://staging.hologramrose.io
       - run:
           name: Deploy to S3 if tests pass and branch is Master (real)
-          command: aws s3 sync ./ s3://staging.hologramrose.io
+          command: aws s3 sync ./build s3://staging.hologramrose.io
 
 workflows:
   version: 2
