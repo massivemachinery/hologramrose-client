@@ -44,7 +44,7 @@ jobs:
       - run: ls -la
       - run: ls -la /
       - run: ls -la /tmp/
-      # - run: cp -R ./build /tmp/
+      - run: cp -R ./build /tmp/
 
   deploy:
     docker:
@@ -73,4 +73,4 @@ workflows:
             - build
           filters:
             branches:
-              only: master
+              only: circleci
