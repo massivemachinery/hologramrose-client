@@ -26,8 +26,6 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: yarn --version
-      - run: aws --version
       - run: yarn install
 
       - save_cache:
@@ -57,6 +55,8 @@ jobs:
       - attach_workspace:
           at: build
 
+      - run: aws --version
+
       - run:
           name: Copy bundle to S3
           command: aws s3 sync ./build s3://staging.hologramrose.io --delete
@@ -75,4 +75,4 @@ workflows:
             - build
           filters:
             branches:
-              only: circleci
+              only: master
