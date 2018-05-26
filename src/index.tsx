@@ -10,5 +10,7 @@ import App from './components/App/App';
 // https://en.wikipedia.org/wiki/Rose_(color)
 // setFavicon('#ff007f', 64);
 
+console.log('new version 5');
+
 ReactDOM.render(<App />, document.getElementById('root') as HTMLElement);
 // registerServiceWorker();
