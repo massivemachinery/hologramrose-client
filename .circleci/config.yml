@@ -2,7 +2,6 @@
 #
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
-
 version: 2
 jobs:
   build:
@@ -47,10 +46,6 @@ jobs:
           paths:
             - ./*
 
-      - run: pwd
-      - run: ls -la
-      - run: ls -la build/
-
   deploy:
     docker:
       - image: lirbank/circleci-awscli
@@ -62,7 +57,7 @@ jobs:
           at: build
 
       - run:
-          name: Deploy to S3 if tests pass and branch is Master (real)
+          name: Deploy to S3 if tests pass and branch is Master
           command: aws s3 sync ./build s3://staging.hologramrose.io --delete
 
 workflows:
