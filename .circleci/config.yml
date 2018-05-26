@@ -41,6 +41,7 @@ jobs:
       - run: yarn build
 
       # TMP
+      - run: pwd
       - run: ls -la
       - run: ls -la /
       - run: ls -la /tmp/
