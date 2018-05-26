@@ -16,11 +16,6 @@ jobs:
 
     working_directory: ~/repo
 
-    persist_to_workspace:
-      root: /tmp/build
-      paths:
-        - ~/repo/build/*
-
     steps:
       - checkout
 
@@ -44,6 +39,11 @@ jobs:
 
       # build
       - run: yarn build
+
+      - persist_to_workspace:
+        root: /tmp/build
+        paths:
+          - ~/repo/build/*
 
       # TMP
       - run: pwd
