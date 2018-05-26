@@ -27,6 +27,7 @@ jobs:
           - v1-dependencies-
 
       - run: yarn --version
+      - run: aws --version
       - run: yarn install
 
       - save_cache:
