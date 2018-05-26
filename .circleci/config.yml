@@ -77,6 +77,9 @@ jobs:
     working_directory: ~/repo
 
     steps:
+      - attach_workspace:
+          at: workspace
+
       - run: pwd
       - run: ls -la
       - run: ls -la ../
