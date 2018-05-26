@@ -57,8 +57,12 @@ jobs:
           at: build
 
       - run:
-          name: Deploy to S3 if tests pass and branch is Master
+          name: Copy bundle to S3
           command: aws s3 sync ./build s3://staging.hologramrose.io --delete
+
+      - run:
+          name: Invalidate objects in CloudFront edge caches
+          command: aws cloudfront create-invalidation --distribution-id E3Q9EK4MCKHI2Y --paths '/*'
 
 workflows:
   version: 2
