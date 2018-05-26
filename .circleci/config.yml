@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/node:10.2.0
+      - image: lirbank/circleci-awscli
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -39,6 +39,9 @@ jobs:
 
       # build
       - run: yarn build
+
+      # TMP
+      - run: ls -la
 
   deploy:
     docker:
