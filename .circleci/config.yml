@@ -44,13 +44,16 @@ jobs:
     docker:
       - image: lirbank/circleci-awscli
 
-    working_directory: ~/repo
+    # working_directory: ~/repo
 
     steps:
       - run: ls -la
       - run:
           name: Deploy to S3 if tests pass and branch is Master
           command: aws s3 ls s3://staging.hologramrose.io
+      - run:
+          name: Deploy to S3 if tests pass and branch is Master (real)
+          command: aws s3 sync ./ s3://staging.hologramrose.io
 
 workflows:
   version: 2
