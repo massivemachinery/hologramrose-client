@@ -47,7 +47,7 @@ jobs:
     docker:
       - image: lirbank/circleci-awscli
 
-    # working_directory: ~/repo
+    working_directory: ~/repo
 
     steps:
       - run: ls -la
