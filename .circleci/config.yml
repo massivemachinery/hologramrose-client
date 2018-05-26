@@ -41,16 +41,12 @@ jobs:
       # build
       - run: yarn build
 
-      - run: mkdir -p workspace
-      - run: echo "Hello, world!" > workspace/echo-output
-
       # https://circleci.com/docs/2.0/workflows/#using-workspaces-to-share-data-among-jobs
       - persist_to_workspace:
           root: build
           paths:
             - ./*
 
-      # TMP
       - run: pwd
       - run: ls -la
       - run: ls -la build/
@@ -65,12 +61,9 @@ jobs:
       - attach_workspace:
           at: build
 
-      - run: pwd
-      - run: ls -la
-      - run: ls -la build/
       - run:
           name: Deploy to S3 if tests pass and branch is Master (real)
-          command: aws s3 sync ./build s3://staging.hologramrose.io
+          command: aws s3 sync ./build s3://staging.hologramrose.io --delete
 
 workflows:
   version: 2
