@@ -82,11 +82,11 @@ jobs:
 
     steps:
       - attach_workspace:
-          at: workspace
+          at: build
 
       - run: pwd
       - run: ls -la
-      - run: ls -la workspace/
+      # - run: ls -la workspace/
       - run: ls -la build/
       - run: ls -la ../
       - run: ls -la /
