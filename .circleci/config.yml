@@ -46,6 +46,7 @@ jobs:
       - run: ls -la /
       - run: ls -la /tmp/
       - run: cp -R ./build /tmp/
+      - run: ls -la /tmp/
 
   deploy:
     docker:
