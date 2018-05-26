@@ -41,9 +41,16 @@ jobs:
       - run: yarn build
 
       - persist_to_workspace:
-        - root: /tmp/build
-        - paths:
-          - ~/repo/build/*
+          root: /tmp/workspace
+          paths:
+            # - target/application.jar
+            # - build/*
+            - ~/repo/build/*
+
+      # - persist_to_workspace:
+      #   - root: /tmp/build
+      #   - paths:
+      #     - ~/repo/build/*
 
       # TMP
       - run: pwd
