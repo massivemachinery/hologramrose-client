@@ -1,7 +1,7 @@
-import {ApolloClient} from 'apollo-client';
-import {HttpLink} from 'apollo-link-http';
-import {InMemoryCache} from 'apollo-cache-inmemory';
-import {setContext} from 'apollo-link-context';
+import { ApolloClient } from 'apollo-client';
+import { HttpLink } from 'apollo-link-http';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import { setContext } from 'apollo-link-context';
 
 console.log('API', process.env.REACT_APP_SERVER);
 

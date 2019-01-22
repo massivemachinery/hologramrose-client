@@ -3,7 +3,7 @@ const ADD = 'conservator/some-stuff.js/ADD';
 
 // Action creators
 export const add = (text: string) => {
-  return {type: ADD, text};
+  return { type: ADD, text };
 };
 
 const initialState = {
@@ -13,7 +13,7 @@ const initialState = {
 // Reducer
 export default function reducer(
   state: {} = initialState,
-  action: {type: string; text: string},
+  action: { type: string; text: string },
 ) {
   switch (action.type) {
     case ADD: {

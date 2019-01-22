@@ -1,4 +1,4 @@
-import {graphql} from 'react-apollo';
+import { graphql } from 'react-apollo';
 import Query from '../graphql/queries/CurrentUser';
 
 type TProps = any;
@@ -21,7 +21,7 @@ export default graphql<TProps, TData, TGraphQLVariables, TChildProps>(Query, {
       fetchPolicy: 'cache-and-network',
     };
   },
-  props: ({data, ownProps}) => {
+  props: ({ data, ownProps }) => {
     if (!data) {
       return;
     }

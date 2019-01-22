@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {compose, withProps} from 'recompose';
+import { compose, withProps } from 'recompose';
 import Typography from '@material-ui/core/Typography';
 import withCurrentUser from '../../hoc/withCurrentUser';
 import SignIn from './SignIn';
