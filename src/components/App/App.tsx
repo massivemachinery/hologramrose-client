@@ -2,7 +2,7 @@ import * as React from 'react';
 import {ApolloProvider} from 'react-apollo';
 import {Provider} from 'react-redux';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import {MuiThemeProvider, createMuiTheme} from 'material-ui/styles';
+import {MuiThemeProvider, createMuiTheme} from '@material-ui/core/styles';
 import apolloClient from '../../apollo';
 import store from '../../redux';
 import theme from '../../config/theme';

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import Button from 'material-ui/Button';
+import Button from '@material-ui/core/Button';
 
 export default class SignIn extends React.Component<{
   url: string;
@@ -61,7 +61,7 @@ export default class SignIn extends React.Component<{
 
   render() {
     return (
-      <Button variant="raised" onClick={this.handleSignIn} color="primary">
+      <Button variant="contained" onClick={this.handleSignIn} color="primary">
         Sign in
       </Button>
     );
